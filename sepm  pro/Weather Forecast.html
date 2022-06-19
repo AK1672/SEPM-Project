@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body{
+        background-color: lightblue;
+        background-image:url("bg.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    .head{
+        background-color:rgb(20, 100, 150);
+        color : rgb(255, 115, 0);
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif; 
+        font-size: 40px;  
+        border: 7px solid orange;
+        border-radius: 5px;
+        margin : 0px;
+    }
+  .body{
+      text-align: center;
+      color :rgb(255, 115, 0);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 30px;
+      padding: 20px;
+  }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="icon" type="image/x-icon" href="weather-app-icon-4.ico">
+</head>
+<body>
+        <div class="head"> 
+          <p><b>WEATHER FORECAST</b></p>
+        </div>
+        <div class="body">
+          <p><b>By Default Shows your current location Weather Report<br>You can enter city name to check Weather Report</b></p>
+          <label for="cname">City Name:</label><br>
+          <input type="text" id="cname" name="cname"><br>
+          <button onclick="fn1()" id="btn1">Check Weather</button><br><br>
+          <iframe src="https://wttr.in/" height="570px" width="1000px" scrolling="no" name="wf" id="wf"></iframe>
+          <script>
+            function fn1()
+            {
+              var x=document.getElementById("cname").value;
+              x="https://wttr.in/"+x;
+              document.getElementById("wf").src=x;
+              document.getElementById("wf").height="590px";
+            }
+          </script>
+        </div>
+    </body>
+</html>
